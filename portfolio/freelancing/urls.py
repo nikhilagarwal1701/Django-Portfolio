@@ -22,5 +22,7 @@ app_name = 'freelancing'
 urlpatterns = [
     # path('admin/', admin.site.urls),
     # path('', include('main.urls')),
-    path('', views.freelance_home, name='freelance_home')
+    path('', views.freelance_home, name='freelance_home'),
+    path('wallpaper-thumbnail/', views.wallpaper_thumbnail, name="wallpaper_thumbnail"),
+    path('video-edits/', views.video_edits, name = "video_edits")
 ]

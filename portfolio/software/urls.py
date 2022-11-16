@@ -22,5 +22,6 @@ app_name = 'software'
 urlpatterns = [
     # path('admin/', admin.site.urls),
     # path('', include('main.urls')),
-    path('', views.homepage, name='homepage')
+    path('', views.homepage, name='homepage'),
+    path('resume/', views.resume, name = "software"),
 ]
