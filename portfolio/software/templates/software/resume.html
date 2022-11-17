@@ -1,2 +1,5 @@
 {% include 'software/include/top-bar.html' %}
 <h3>Download Resume</h3>
+{% for resume in resumes %}
+<a href={{resume.resume_link}}>Download</a>
+{% endfor %}
