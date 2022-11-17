@@ -7,7 +7,8 @@ from .models import Wallpaper
 class WallpaperAdmin(admin.ModelAdmin):
     fieldsets = [
         ("Title/Date", {"fields": ["wallpaper_name", "wallpaper_date"]}),
-        ("Image", {"fields": ["wallpaper_image"]})
+        ("Google Drive URL", {"fields": ["wallpaper_drive_url"]}),
+        ("Image", {"fields": ["wallpaper_image"]}),
     ]
 
 

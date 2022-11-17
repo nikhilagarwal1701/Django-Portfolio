@@ -1,2 +1,41 @@
 {% include "freelancing/include/top-navbar.html" %}
 <h3>wallpaper-thumbnail</h3>
+
+<!-- <div class="row">
+  {% for wallpaper in wallpapers %}
+    <div class="col s12 m8 l4">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{wallpaper.wallpaper_name}}</span>
+          <p>{{wallpaper.wallpaper_name}}</p>
+          <p>{{wallpaper.wallpaper_date}}</p>
+          <img src=/{{wallpaper.wallpaper_image}}></a>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div> -->
+
+<div class="row">
+  {% for wallpaper in wallpapers %}
+    <div class="col s12 m12 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{wallpaper.wallpaper_drive_url}}" height="224"/>
+          <span class="card-title">{{wallpaper.wallpaper_name}}</span>
+        </div>
+        <div class="card-content">
+            <p>{{wallpaper.wallpaper_name}}</p>
+            <p>{{wallpaper.wallpaper_date}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
