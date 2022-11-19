@@ -1,21 +1,16 @@
 {% include "freelancing/include/top-navbar.html" %}
 <h3>wallpaper-thumbnail</h3>
-<head><script>function getDownloadURL(url){
-  mandatoryPart = "https://drive.google.com/uc?export=download&id="
-  variablePart = url.substring(32,65)
-  return mandatoryPart + variablePart;}
-  </script></head>
+
+<head>
+  {% include "freelancing/include/scripts/downloadWallpaper.html" %}
+</head>
 
 <div class="row">
   {% for wallpaper in wallpapers %}
     <div class="col s12 m6 l3">
       <div class="card">
         <div class="card-image">
-            <script>
-              mandatoryPart = "https://drive.google.com/uc?export=view&id="
-              variablePart = "{{wallpaper.wallpaper_drive_url}}".substring(32,65)
-              document.write("<img class = 'image' src = '" + mandatoryPart + variablePart + "' height='224'/>")
-            </script>
+          {% include "freelancing/include/scripts/viewWallpaper.html" %}
         </div>
         <div class="card-content">
             <p style="font-size:150%;"><strong>{{wallpaper.wallpaper_name}}</strong></p>
@@ -30,3 +25,4 @@
     </div>
   {% endfor %}
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
