@@ -1,20 +1,53 @@
 {% include "freelancing/include/top-navbar.html" %}
 <h3>wallpaper-thumbnail</h3>
-
+<head><script>function getDownloadURL(url){
+  mandatoryPart = "https://drive.google.com/uc?export=download&id="
+  variablePart = url.substring(32,65)
+  return mandatoryPart + variablePart;}
+  </script></head>
 
 <div class="row">
   {% for wallpaper in wallpapers %}
+  <script>
+  
+    function getViewURL(url){
+      mandatoryPart = "https://drive.google.com/uc?export=view&id="
+      variablePart = url.substring(32,65)
+      fullURL = mandatoryPart + variablePart
+      document.write(fullURL);
+      return fullURL
+    }
+    
+  </script>
+
     <div class="col s12 m6 l3">
       <div class="card">
         <div class="card-image">
-          <img src="{{wallpaper.wallpaper_drive_url}}" height="224"/>
+          <img id = 'someImage' height="224"/>
+
+                              <script>
+                                  function getViewURL(){
+                                        mandatoryPart = "https://drive.google.com/uc?export=view&id="
+                                        url1 = "{{wallpaper.wallpaper_drive_url}}"
+                                        variablePart = url1.substring(32,65)
+                                        
+                                        console.log(variablePart);
+                                        return fullURL;
+                                }
+                                document.onload = function(){
+                                    document.getElementById('someImage').src=getViewURL();
+                                };
+                              </script>
+          
         </div>
         <div class="card-content">
             <p style="font-size:150%;"><strong>{{wallpaper.wallpaper_name}}</strong></p>
             <p>{{wallpaper.wallpaper_date}}</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <form method="get">
+          <input type = "button" value="Download" onclick="location.href = getDownloadURL('{{wallpaper.wallpaper_drive_url}}')"/>
+        </form>
         </div>
       </div>
     </div>
