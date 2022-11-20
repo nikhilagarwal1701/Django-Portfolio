@@ -4,25 +4,25 @@
 <head>
   {% include "freelancing/include/scripts/downloadWallpaper.html" %}
 </head>
-
-<div class="row">
-  {% for wallpaper in wallpapers %}
-    <div class="col s12 m6 l3">
-      <div class="card">
-        <div class="card-image">
-          {% include "freelancing/include/scripts/viewWallpaper.html" %}
-        </div>
-        <div class="card-content">
-            <p style="font-size:150%;"><strong>{{wallpaper.wallpaper_name}}</strong></p>
-            <p>{{wallpaper.wallpaper_date}}</p>
-        </div>
-        <div class="card-action">
-          <form method="get">
-          <input type = "button" value="Download" onclick="location.href = getDownloadURL('{{wallpaper.wallpaper_drive_url}}')"/>
-        </form>
+<body style="background-color: black;">
+  <div class="row">
+    {% for wallpaper in wallpapers %}
+      <div class="col s12 m6 l3">
+        <div class="card" style="background-color: rgb(138, 118, 118);">
+          <div class="card-image">
+            {% include "freelancing/include/scripts/viewWallpaper.html" %}
+          </div>
+          <div class="card-content">
+              <p style="font-size:150%;"><strong>{{wallpaper.wallpaper_name}}</strong></p>
+              <p>{{wallpaper.wallpaper_date}}</p>
+          </div>
+          <div class="card-action">
+            <form method="get">
+            <input type = "button" value="Download" onclick="location.href = getDownloadURL('{{wallpaper.wallpaper_drive_url}}')"/>
+          </form>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    {% endfor %}
+  </div>
+</body>
