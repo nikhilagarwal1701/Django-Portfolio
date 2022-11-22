@@ -1,7 +1,27 @@
 {% include 'software/include/top-bar.html' %}
+
+
+<head>
+    {% include 'software/include/scripts/downloadButtonStyle.html' %}
+</head>
+
 <body style="background-color: rgb(61, 59, 59);">
     <h3 style="color: rgb(205, 194, 194);">Download Resume</h3>
     {% for resume in resumes %}
-    <a href={{resume.resume_link}}>Download</a>
+    <p>
+        <span class="resumeName">
+            {{resume.resume_company_name}} : 
+        </span>
+
+        {% include 'software/include/scripts/downloadURL.html' %}
+        {% include 'software/include/scripts/viewURL.html' %}
+        <button class="btn" onclick = "window.open(getViewURL('{{resume.resume_link}}'), '_blank'); return 'false';">
+            <i class="fa fa-eye" ></i>
+        </button>
+        "  "
+        <button class="btn" onclick = "window.open(getDownloadURL('{{resume.resume_link}}'), '_blank'); return 'false';">
+            <i class="fa fa-download" ></i>
+        </button>
+    </p>
     {% endfor %}
 </body>
