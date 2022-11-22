@@ -4,6 +4,8 @@
 
 <head>
   {% include "freelancing/include/scripts/downloadWallpaper.html" %}
+  {% include 'freelancing/include/scripts/downloadButtonStyle.html' %}
+  {% include 'freelancing/include/scripts/viewWallpaperNewTab.html' %}
 </head>
 
 <body style="background-color: rgb(61, 59, 59);">
@@ -23,9 +25,12 @@
           </div>
 
           <div class="card-action" class="pointer">
-            <form method="get">
-            <input class="pointer" type = "button" style="background-color: rgb(81, 81, 89); color: rgb(124, 97, 177);" value="Download" onclick="location.href = getDownloadURL('{{wallpaper.wallpaper_drive_url}}')"/>
-          </form>
+            <button class="btn" onclick = "window.open(getViewURLNewTab('{{wallpaper.wallpaper_drive_url}}'), '_blank'); window.focus(); return 'false';">
+              <i class="fa fa-eye" ></i>
+            </button>
+            <button class="btn" onclick = "window.open(getDownloadURL('{{wallpaper.wallpaper_drive_url}}'), '_blank'); return 'false';">
+              <i class="fa fa-download" ></i>
+            </button>
           </div>
 
         </div>
