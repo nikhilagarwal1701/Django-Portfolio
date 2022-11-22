@@ -12,13 +12,15 @@
         <span class="resumeName">
             {{resume.resume_company_name}} : 
         </span>
+
         {% include 'software/include/scripts/downloadURL.html' %}
         {% include 'software/include/scripts/viewURL.html' %}
         <button class="btn" onclick = "window.open(getViewURL('{{resume.resume_link}}'), '_blank'); return 'false';">
             <i class="fa fa-eye" ></i>
         </button>
         "  "
-        <button class="btn" onclick = "window.open(getDownloadURL('{{resume.resume_link}}'), '_blank'); return 'false';"><i class="fa fa-download" ></i>
+        <button class="btn" onclick = "window.open(getDownloadURL('{{resume.resume_link}}'), '_blank'); return 'false';">
+            <i class="fa fa-download" ></i>
         </button>
     </p>
     {% endfor %}
