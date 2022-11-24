@@ -1,0 +1,75 @@
+<style>
+    .topicSelf {
+        font-family: "Comic Sans MS"; 
+        color: rgb(106, 106, 228);
+    }
+    .cardSelf {
+        background-image: linear-gradient(45deg,#6f04d9, #d9048e);
+    }
+
+    .bodySelf {
+        background-color: rgb(61, 59, 59);
+    }
+
+    .contentSelf {
+        color: rgb(131, 126, 126);
+    }
+
+    .viewDownloadSelf {
+        text-align: right;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 16px;
+    }
+
+    .flip-card-front {
+        background-image: linear-gradient(45deg, #6f04d9, #d9048e);
+    }
+
+    .flip-card-front img {
+        width: 220px;
+        margin-top: 1rem;
+    }
+
+    .flip-card-back {
+        background-image: linear-gradient(315deg, #6f04d9, #8a045c);
+        color: #ffffff;
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-back img {
+        width: 140px;
+        margin-top: 1rem;
+    }
+
+    .flip-card-back h3 {
+        margin-bottom: 0.3rem;
+    }
+
+    .flip-card-back h1 {
+        margin: 0;
+    }
+</style>
