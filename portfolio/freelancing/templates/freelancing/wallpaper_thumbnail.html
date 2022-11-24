@@ -12,7 +12,6 @@
     {% for wallpaper in wallpapers %}
       <div class="col s12 m6 l3">
         <div class="card cardSelf">
-
           <div class="card-image">
             {% include "freelancing/include/scripts/viewWallpaper.html" %}
           </div>
@@ -23,7 +22,7 @@
               
           </div>
 
-          <div class="card-action pointer viewDownloadSelf">
+          <div class="pointer viewDownloadSelf">
             <button class="btn" onclick = "window.open(getViewURLNewTab('{{wallpaper.wallpaper_drive_url}}'), '_blank'); window.focus(); return 'false';">
               <i class="fa fa-eye" ></i>
             </button>
