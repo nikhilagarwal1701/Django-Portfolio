@@ -8,11 +8,34 @@
 <nav>
     <div class="nav-wrapper">
       <a href="" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <li><a href="/freelance/">Freelance</a></li>
         <li><a href="/freelance/wallpaper-thumbnail/">Wallpaper/Thumbnail</a></li>
         <li><a href="/freelance/video-edits/">Video Edits</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="" data-target="dropdown1">Dropdown
+          <!-- <i class="material-icons right">arrow_drop_down</i> -->
+        </a></li>
+    
       </ul>
     </div>
 </nav>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/freelance/">Freelance</a></li>
+  <li class="divider"></li>
+  <li><a href="/freelance/wallpaper-thumbnail/">Wallpaper/Thumbnail</a></li>
+  <li><a href="/freelance/video-edits/">Video Edits</a></li>
+</ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      // var instances = M.Dropdown.init(elems, options);
+      M.Dropdown.init(elems, {
+        coverTrigger: false,
+      })
+    });
+</script>
