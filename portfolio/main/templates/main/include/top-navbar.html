@@ -8,10 +8,38 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="">Home</a></li>
-        <li><a href="/freelance/">Freelance</a></li>
-        <li><a href="/software/">Software</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a class="dropdown-trigger" href="/freelance/" data-target="freelanceDropdown">Freelance
+        </a></li>
+        <li><a class="dropdown-trigger" href="/software/" data-target="softwareDropdown">Software
+        </a></li>
         <li><a href="">Logout</a></li>
       </ul>
     </div>
 </nav>
+
+<ul id="freelanceDropdown" class="dropdown-content">
+  <li><a href="/freelance/">Freelance</a></li>
+  <li class="divider"></li>
+  <li><a href="/freelance/wallpaper-thumbnail/">Wallpaper/Thumbnail</a></li>
+  <li><a href="/freelance/video-edits/">Video Edits</a></li>
+</ul>
+
+
+<ul id="softwareDropdown" class="dropdown-content">
+  <li><a href="/software/">Software</a></li>
+  <li class="divider"></li>
+  <li><a href="/software/resume/">Resume</a></li>
+</ul>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    // var instances = M.Dropdown.init(elems, options);
+    M.Dropdown.init(elems, {
+      coverTrigger: false,
+      constrainWidth: false,
+      hover: true,
+    })
+  });
+</script>
