@@ -6,7 +6,7 @@
 
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="/" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <li><a class="dropdown-trigger" href="/freelance/" data-target="freelanceDropdown">Freelance
@@ -18,7 +18,9 @@
     </div>
 </nav>
 
-<ul id="freelanceDropdown" class="dropdown-content">
+
+<!-- Define Dropdowns -->
+<ul id="freelanceDropdown" class="dropdown-content" style="background-color: rgb(61, 59, 59);">
   <li><a href="/freelance/">Freelance</a></li>
   <li class="divider"></li>
   <li><a href="/freelance/wallpaper-thumbnail/">Wallpaper/Thumbnail</a></li>
@@ -26,12 +28,13 @@
 </ul>
 
 
-<ul id="softwareDropdown" class="dropdown-content">
+<ul id="softwareDropdown" class="dropdown-content" style="background-color: rgb(61, 59, 59);">
   <li><a href="/software/">Software</a></li>
   <li class="divider"></li>
   <li><a href="/software/resume/">Resume</a></li>
 </ul>
 
+<!-- Trigger -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
