@@ -1,5 +1,14 @@
 <script>
-    mandatoryPart = "https://drive.google.com/uc?export=view&id="
-    variablePart = "{{wallpaper.wallpaper_drive_url}}".substring(32,65)
-    document.write("<img class = 'image' src = '" + mandatoryPart + variablePart + "' height='224'/>")
+    function getViewURL() {
+        mandatoryPart = "https://drive.google.com/uc?export=view&id="
+        variablePart = "{{wallpaper.wallpaper_drive_url}}".substring(32,65)
+        document.write("<img class = 'image' src = '" + mandatoryPart + variablePart + "' height='224'/>")
+    }
+    getViewURL();
+
+    function getViewURLNewTab(url){
+        mandatoryPart = "https://drive.google.com/uc?export=view&id="
+        variablePart = url.substring(32,65)
+        return mandatoryPart + variablePart;
+    }
 </script>

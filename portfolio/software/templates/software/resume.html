@@ -1,7 +1,6 @@
-{% include 'software/include/top-bar.html' %}
-
-
 <head>
+    <title>Resume</title>
+    {% include 'main/include/top-navbar.html' %}
     {% include 'software/include/scripts/downloadButtonStyle.html' %}
 </head>
 
@@ -12,9 +11,15 @@
         <span class="resumeName">
             {{resume.resume_company_name}} : 
         </span>
+
         {% include 'software/include/scripts/downloadURL.html' %}
-        <button class="btn" onclick = "location.href = getDownloadURL('{{resume.resume_link}}')"><i class="fa fa-download" ></i>
-            Download
+        {% include 'software/include/scripts/viewURL.html' %}
+        <button class="btn" onclick = "window.open(getViewURL('{{resume.resume_link}}'), '_blank'); return 'false';">
+            <i class="fa fa-eye" ></i>
+        </button>
+        "  "
+        <button class="btn" onclick = "window.open(getDownloadURL('{{resume.resume_link}}'), '_blank'); return 'false';">
+            <i class="fa fa-download" ></i>
         </button>
     </p>
     {% endfor %}
