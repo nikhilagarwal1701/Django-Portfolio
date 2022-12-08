@@ -1,0 +1,34 @@
+<style>
+    @keyframes slideInUp {
+      0% {
+        transform: translateY(100%);
+        opacity: 0%;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 100%;
+      }
+    
+    }
+    @keyframes slideInUpLate {
+      0% {
+        transform: translateY(100%);
+        opacity: 0%;
+      }
+      50% {
+         transform: translateY(100%);
+         opacity: 0%;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 100%;
+      }
+    
+    }
+    .firstUp {
+         animation: slideInUp 1s ease-in 0s 1;
+    }
+    .secondUp {
+         animation: slideInUpLate 2s ease-in 0s 1;
+    }
+</style>
