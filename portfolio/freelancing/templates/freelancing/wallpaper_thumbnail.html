@@ -3,16 +3,14 @@
   {% include "main/include/top-navbar.html" %}
   {% include "freelancing/include/scripts/downloadWallpaper.html" %}
   {% include "freelancing/include/scripts/styling.html" %}
+  {% include 'freelancing/include/scripts/animations.html' %}
 </head>
-
 
 <h3 class="topicSelf">Wallpaper-Thumbnail</h3>
 
 
-
 <body class="bodySelf">
-
-  <div class="row">
+  <div class="row fadeInSelf">
     {% for wallpaper in wallpapers %}
       <div class="col s12 m6 l3">
         <div class="card cardSelf">
@@ -39,5 +37,6 @@
       </div>
     {% endfor %}
   </div>
+ </div>
 
 </body>
